@@ -1,52 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=Edge">
- <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alex (Bot)</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" title="Alex(ai) created and founded by Abubakar_ibrahim © copyright 2023-2024">
+    <meta name="viewport" title="Alex(ai) created and founded by Abubakar_ibrahim © copyright 2023-2024" content="width=device-width, initial-scale=1">
+     <title>Alex (Bot)</title>
+     <link rel="shortcut icon" href="images/ai.jpg" type="image/x-icon">
+    <style>
+        body{
+        background: linear-gradient(to top right, black,rgb(39, 37, 37));
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size: cover;
+        text-align: center;
+    }
+        .a1,.a2,.a3,.a4,.a5{
+            display: block;
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            left: calc(50% -1em);
+            border-radius: 1.4em;
+            transform-origin: 1.3em 2em;
+            animation: rotate;
+            animation-iteration-count: infinite;
+            animation-duration: 1.5s;
+        }
+        @keyframes rotate {
+            0%{transform: rotate(1deg);}
+            100%{transform: rotate(360deg);}
+        }
+        .a1{
+            animation-delay: 0.1s;
+            background: cyan;
+        }
+        .a2{
+            animation-delay: 0.2s;
+            background: pink;
+        }
+        .a3{
+            animation-delay: 0.3s;
+            background: purple;
+        }
+        .a4{
+            animation-delay: 0.4s;
+            background: green;
+        }
+        .a5{
+            animation-delay: 0.5s;
+            background: black;
+        }
+        .div2{
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       position: relative;
+       top: 45vh;
+        }
+        h4{
+            position: relative;
+            left: 8.5px;
+            top: 55.5px;
+            color: rgb(115, 165, 41)
+        }
+    </style>
 </head>
- <body onload="timer()">
- <nav>
-   <ul>
-   <lii><img src="images/ai.jpg" id="botimage" onclick="about()"></lii>
-   </lii>
-   <lii><h3>Alex (Ai)</h3>
-   </lii>
-   <p id="status">Online</p>
-   </ul>
- </nav>
-    <main onscroll="save()">
-      <p class="wel">You're highly welcome</p>
-      <p class="wel">Connected🇳🇬</p>
-      
-      <ai>
-      <div class="bot">
-        <div class="botimg">
-        <img src="images/ai.jpg">
-        <t>Alex (Ai)</t>
-           </div>
-        <p id="botm">Hey please change your browser</p>
-        <p id="time">Error time</p>
-      </div>
-      
-      </ai>
-      
-      <user>
-      </user>
+<body>
+        <div class="div2">
+        <div class="a1"></div>
+        <div class="a2"></div>
+        <div class="a3"></div>
+        <div class="a4"></div>
+        <div class="a5"></div>
+        <h4>Please wait...</h4>
+         
+    </div>
+<script>
+    //initializes the counter
+let x = 1;
+//repeats action every second
+let interval = setInterval(() => {
+  //stops the interval
+  if (x == 5) clearInterval(interval);
+  if (x == 5) {
+    if (localStorage.getItem('username')) {
+        window.location = "home.html";
+        window.close();
+} else {
+    window.location = "signup.html";
+    window.close();
+}
+  }
+  //counts to hundred
+  x++;
+}, 1000);
 
-         </main>
-      <div class="br">
-        <div>
-      <input type="text" placeholder="Type your message here" id="input">
-      <button onclick="sendMessage()"><img src="images/send.png" id="send"></button>
-      </div>
-      </div>
-      
-  
-  <!-- Projects -->
-  <link rel="stylesheet" href="style.css">
-  <script src="script/script1.js"></script>
-    <script src="script/script2.js"></script>
+</script>
+    
 </body>
 </html>

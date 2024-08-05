@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="script/index.css">
+    <link rel="shortcut icon" href="images/ai.jpg" type="image/x-icon">
+</head>
+<body>
+    <div class="main">
+        <h1>Sign Up</h1>
+        <input type="file" onchange="read()" id="pic" required="required">
+        <img src="images/me.png" id="disp" onclick="cl()" title="Profile Picture">
+      <p style="color: aqua;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Enter your profile picture above.</p>
+
+      <form action="home.html" onsubmit="signUp()">
+        <input type="text" id="name" placeholder="Username" required="required" minlength="4" maxlength="8"><br><br>
+        <input type="email" id="email" placeholder="Enter Email" required="required"><br><br>
+        <input type="date" id="date" required="required"><br><br>  
+        <input type="submit" value="Sign Up">
+      </form>
+    <footer>
+    <p id="copy" style="color: aqua;font-family: verdana;font-size: 12.5px;"></p>
+    </footer>
+    </div>
+    <script>
+   if (localStorage.getItem('username')) {
+    window.location = "home.html";
+    window.close();
+} else {
+    window.location = "signup.html";
+    window.close();
+}
+
+  b = new Date().getFullYear();
+    	a = "Copyright © 2023-"+b+" By Abubakar ibrahim";
+    	document.getElementById('copy').innerText = a
+        function signUp() {
+            name = document.getElementById('name').value;
+            email = document.getElementById('email').value;
+            date = document.getElementById('date').value;  
+
+            localStorage.setItem('username',name);
+            localStorage.setItem('email',email)    
+            localStorage.setItem('birthdate',date)
+            window.close()    
+        }     
+  function cl() {
+    document.getElementById('pic').click();
+  }      
+  function read() {
+  var reader = new FileReader();
+  var file = document.getElementById('pic').files[0];
+  reader.onload = function(e){
+  document.getElementById('disp').src = e.target.result;
+  addImage()
+}
+reader.readAsDataURL(file);
+}
+function addImage(){
+  let imgData = document.getElementById('disp');
+  var imagesObject = [];
+  imagesObject.push(imgData.src);
+  localStorage.setItem("Ppic", JSON.stringify(imagesObject));
+}
+ </script>
+</body>
+</html>

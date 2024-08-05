@@ -1,0 +1,88 @@
+body{
+    background: linear-gradient(to top right, black,rgb(39, 37, 37));
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
+.main{
+    width: 80%;
+    position: relative;
+    left: 10%;
+    height: fit-content;
+    text-align: center;
+}
+h1{
+    color: aqua;
+    letter-spacing: 3px;
+    font-family: tahoma;
+    font-weight: normal;
+    font-size:35px;
+}
+.main img{
+    height: 165px;
+    width: 165px;
+    border-radius: 120px 120px 120px 120px;
+}
+.main img:hover{
+   animation: myAnim 0.65s linear alternate infinite;
+}
+input[type="text"],input[type="email"]{
+    height: 40px;
+    padding-left: 14.5px;
+    font-family: lucida;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+}
+input[type="date"]{
+    height: 45px;
+    padding-left: 14.5px;
+    font-family: lucida;
+    font-size: 18px;
+    outline: none;
+    border-radius: 5px;
+    color: green;
+    width: 220px;
+}
+input[type="email"]:invalid{
+  color: red;
+}
+input[type="date"]:invalid{
+    color: red;
+  }
+input[type="text"]:invalid{
+    color: red;
+  }
+input[type="submit"]{
+    outline: none;
+    font-family: verdana;
+    height: 48px;
+    width: 180px;
+    font-size: 17.5px;
+    background: linear-gradient(to top right,rgb(22, 176, 223), rgb(17, 139, 177));
+    border-radius: 8px;
+    color: black
+}
+input[type="submit"]:hover{
+    background: linear-gradient(to top right,rgb(22, 176, 223), rgb(16, 100, 126));
+}
+input[type="submit"]:active{
+    background: linear-gradient(to top left,rgb(22, 176, 223), rgb(17, 139, 177));
+
+}
+#pic{
+    position: absolute;
+    top: 140px;
+    display: none;
+}
+@keyframes myAnim {
+    from {
+        box-shadow: 1px 1px 8px rgb(8, 153, 197);
+} to {
+    box-shadow: 1px 1px 8px rgb(167, 13, 13);
+}
+
+}

@@ -1,4 +1,5 @@
 function generate(msg) {
+  let name = localStorage.getItem('username');
   msg = document.getElementById('input').value;
   msg = msg.toLowerCase();
   let mathExpression = msg.match(/\d+[\+\-\*\/]\d+/);
@@ -22,10 +23,10 @@ function generate(msg) {
   var time = '<mark>'+today.toLocaleTimeString()+'<mark>.';
  reply = ['The time is actually '+time, 
           'The time says '+time, 
-          'the current time was '+time,
+          'The current time is '+time,
           'Why did you borther about the time',
           "Kindly check your phone, am busy",
-          "Mr.timer the time is"+time,
+          "Mr.timer the time is "+time,
           'Hmmm... the time'
          ];
   var words = reply[Math.floor(Math.random() *
@@ -75,7 +76,7 @@ if (msg == 'why') {
      "You are asking me why am i "+msg.slice(12)+'.',
      "Am i "+msg.slice(12)+' ?',
      "Look i'am not "+msg.slice(12)+'.',
-     "Don't forget im here to assist you",
+     name+" don't forget that im here to assist you",
      "I cant be "+msg.slice(12)+'.',
      "NO! please im not "+msg.slice(12)+'.'
  ];
@@ -105,8 +106,8 @@ if (msg == 'why') {
   } 
  
   if (msg.length == 1) {
-    var reply = [
-"My friend, I only understand words and phrases.", 
+    var reply = [    
+  name+", I only understand words and phrases.", 
 "Oh that was letter " +"'"+msg+"'"+' can you tell me more on it',
 "I don't get you, all i see is letter "+"'"+msg+"'",
 "Letter "+"'"+msg+"'"+' is one of the 26 english alphabets'];
@@ -206,12 +207,12 @@ if (msg == 'why') {
      } 
 if (msg.includes("nothing")) {
              var reply = ["Why ?",
-                 "Tell me the truth?.", 
+                 +name+" tell me the truth?.", 
                  "Uhm ok...",
                  "Really.",
                  "Can i guess it ?",
                 "Alright.",
-                "Alright, let's change our discusion"];
+                "Alright, "+name+" let's change our discusion"];
     var words = reply[Math.floor(Math.random() *
       reply.length)];
     return words;
@@ -284,7 +285,7 @@ if (msg.includes("nothing")) {
                 'Do you really wanna know '+msg+' ?',
                 'As you can see, my name is alex not google.',
                 'Sleep well.',
-                'You shall know.',
+                +name+' you shall know.',
                 '...am thinking'];
     var words = whatsUp[Math.floor(Math.random() *
       whatsUp.length)];
@@ -432,7 +433,8 @@ if (msg.includes("nothing")) {
   } else if (msg.includes("alex")) {
     today=new Date();
     var reply = [
-             "Hey! how did you manage to know my name.",                    "Yeah that's my name.",
+             "Hey! how did you manage to know my name.",
+             "Yeah that's my name.",
              "Yes.",
 "I was launched on 9/10/2023 by a special front-end developer called <Mark style='text-decoration: underline'>Abubakar Ibrahim"
 ];
@@ -440,9 +442,9 @@ if (msg.includes("nothing")) {
       reply.length)];
     return words;
   } else if (msg.includes("my friend")) {
-    var reply = ["My Friend How are you doing.", 
-                 "My friend! how's your day going.",
-                 "How's your day.", 
+    var reply = [name+" how are you doing.", 
+                 name+" how's your day going.",
+                 name+" how's your day.", 
                  "Hey bro I'm angry"];
     var words = reply[Math.floor(Math.random() *
       reply.length)];
@@ -469,13 +471,13 @@ if (msg.includes("nothing")) {
             "Goodbye! Have a great day.",
             "HHH! but is not funny.", 
             "HMMM.",
-            "Stop laughing.",
-            "Is true but not funny at all.",
-            "Laugh and smile.",
+            name+ "stop laughing.",
+            "It's true but not funny at all.",
+            "Laugh out loud.",
             "HHHHH!",
             "Funny rigt?",
-           "Take a deep breath, like HHHH!",
-            "Why are you laughing HHHHH!"];
+           "Take a deep breath, like HHHHHH!",
+            "Why are you laughing HHHHHHH!"];
     var words = laughRep[Math.floor(Math.random() *
       laughRep.length)];
   if (msg.includes("hh")) {
@@ -484,17 +486,17 @@ if (msg.includes("nothing")) {
     var reply = [
           "...", 
           "Sounds cool right?",
-          "I saw you smiling!", 
+          "I saw you trying to smile!", 
           "Smile!"];
     var words = reply[Math.floor(Math.random() *
       reply.length)];
     return words;
   } else {
         var reply = [
-          "I'm sorry, I didn't understand your message.", 
-          "I didn't got what you are saying.",
+          name+" i'm sorry, I didn't understand your message.", 
+          name+" i didn't got what you are saying.",
           "Come again.", 
-          "Do you really know what you are typing."];
+          name+" do you really know what you are typing."];
     var words = reply[Math.floor(Math.random() *
       reply.length)];
     return words;

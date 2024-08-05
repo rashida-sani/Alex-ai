@@ -125,7 +125,7 @@ bottom: 5px;
 .bot img{
   position: relative;
   top: 2.5px;
-  border-radius: 50%;
+  border-radius: 51%;
   left: 10px;
   box-shadow: 1px 1px 7px 1px dimgray;
   height: 31px;
@@ -171,19 +171,18 @@ left: 16px;
 }
 t2 {
   position: relative;
-  bottom: 5px;
+  bottom: 5.6px;
   text-shadow: 1px 1px 3px darkblue;
-  left: 15px;
+  left: 16px;
 }
 .user img{
   position: relative;
-  top: 2.5px;
-  border-radius: 50%;
+  top: 2px;
+  border-radius: 53%;
   left: 10px;
-  height: 29px;
-  width: 30px;
+  width: 28px;
   box-shadow: 0px 1px 8px 0px red;
-  height: 31px;
+  height: 29px;
 }
 .user img:active{
   box-shadow: 0px 1px 8px 0px blue;
