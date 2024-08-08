@@ -12,9 +12,9 @@
    <ul>
    <lii><img src="images/ai.jpg" id="botimage" onclick="about()"></lii>
    </lii>
-   <lii><h3 ondblclick="localStorage.clear();alert('Your account has been deleted successfully.')">Alex (Ai)</h3>
+   <lii><h3 ondblclick="localStorage.clear();alert('Your account has been deleted successfully.');window.location ='index.html'">Alex (Ai)</h3>
    </lii>
-   <p id="status">Online</p>
+   <p id="status">Typing...</p>
    </ul>
  </nav>
     <main onscroll="save()">
@@ -22,7 +22,7 @@
       <p class="wel">Connected🇳🇬</p>
       
       <ai>
-      <div class="bot">
+      <div class="bot" style="display: none;">
         <div class="botimg">
         <img src="images/ai.jpg">
         <t>Alex (Ai)</t>
@@ -43,7 +43,7 @@
       <button onclick="sendMessage()"><img src="images/send.png" id="send"></button>
       </div>
       </div>
-
+      
   <!-- Projects -->
   <link rel="stylesheet" href="style.css">
   <script src="script/script1.js"></script>

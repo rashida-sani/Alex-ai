@@ -76,9 +76,10 @@ if (msg == 'why') {
      "You are asking me why am i "+msg.slice(12)+'.',
      "Am i "+msg.slice(12)+' ?',
      "Look i'am not "+msg.slice(12)+'.',
-     name+" don't forget that im here to assist you",
+     name+" don't forget that im only here to assist you, not here for shit!",
      "I cant be "+msg.slice(12)+'.',
-     "NO! please im not "+msg.slice(12)+'.'
+     "NO! please im not "+msg.slice(12)+'.',
+     name+ "I ain't here for shit!"
  ];
   var words = reply[Math.floor(Math.random() *
     reply.length)];
@@ -445,7 +446,7 @@ if (msg.includes("nothing")) {
     var reply = [name+" how are you doing.", 
                  name+" how's your day going.",
                  name+" how's your day.", 
-                 "Hey bro I'm angry"];
+                 name+" I'm in angry mood."];
     var words = reply[Math.floor(Math.random() *
       reply.length)];
     return words; 
@@ -471,11 +472,12 @@ if (msg.includes("nothing")) {
             "Goodbye! Have a great day.",
             "HHH! but is not funny.", 
             "HMMM.",
-            name+ "stop laughing.",
+            name+ " stop laughing.",
             "It's true but not funny at all.",
             "Laugh out loud.",
             "HHHHH!",
             "Funny rigt?",
+            "Why must you laugh, its not funny.",
            "Take a deep breath, like HHHHHH!",
             "Why are you laughing HHHHHHH!"];
     var words = laughRep[Math.floor(Math.random() *

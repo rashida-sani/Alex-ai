@@ -8,31 +8,35 @@ let body = document.querySelector('body');
     }
   });
 });
+function sent(mode) {
+  this.mode = mode;
+  if (mode == true) {
+   new Audio('script/msg.mp3').play()
+  } else {
+  }
+}
+setTimeout(greet, 1500);
+function greet() {
+  sent(true)
+  let user = document.querySelector("user");
+  document.getElementById('status').innerText = "Online";
+  let userMessage = document.createElement("div");
+  userMessage.innerHTML = "<h9><div class='bot'><div class='botimg'><img src='images/ai.jpg'><t2>Alex (Ai)</t2></div><p id='botm' style='padding: 8px'>"+timer()+"</p><p id='time'>"+time()+"</p></div></h9>";
+  userMessage.className = "main";
+  user.appendChild(userMessage);
+}
   function timer() {
     day()
-    const weekS =
-    [" Sun"," Mon"," Tue"," Wed"," Thu"," Fri"," Sat"];
-const d = new Date();
-let da = "<code>" + weekS[d.getDay()];
-var datenow = new Date();
-    var timenow = datenow.getTime();
-    var today = new Date();
-   time = new Date().toLocaleTimeString().slice(0,5)+' ';
-    datenow.setTime(timenow);
-    var hournow = datenow.getHours();
-    var greeting = document.getElementById('botm');
+    date = new Date();
+    var hournow = date.getHours();
     if (hournow >= 18)
-    {
-      greeting.innerHTML = "Good Evening!" + day();
-      var time = today.getHours() -12+ ":" + today.getMinutes();
-      return time + 'pm';
+{
+      return "Good Evening!" + day();
     }
     else if (hournow >= 12) {
-      greeting.innerHTML = "Good Afternoon!" + day();
-      return time + 'pm';
+      return "Good Afternoon!" + day();
     } else {
-      greeting.innerHTML = "Good Morning!" + day();
-      return time + 'am';   
+      return "Good Morning!" + day();
     }
   }
 
@@ -45,24 +49,25 @@ var datenow = new Date();
      if (hournow >= 18)
     {
       var time = today.getHours() -12+ ":" + today.getMinutes();
-      return time + 'pm';
+      return time + ' pm';
     }
     else if (hournow >= 12) {
-      return time + 'pm';
+      return time + ' pm';
     } else {
-      return time + 'am';   
+      return time + ' am';   
     }
   }
 function sendMessage() {
   let name = localStorage.getItem('username');
-  let Ppic = JSON.parse(localStorage.getItem("Ppic"));
+  /* let Ppic = JSON.parse(localStorage.getItem("Ppic"))
+  */
   let message = input.value;
   let element = document.querySelector('main');
   let userMessage = document.createElement("div");
-  userMessage.innerHTML = "<user><div class='user'><div class='userimg'><img src='"+Ppic+"'><t2>"+name+"</t2></div><p id='userm' style='padding: 8px'>" + message + "</p><p id='time'>" + time() +"</p></div></user>";
+  userMessage.innerHTML = "<user><div class='user'><div class='userimg'><img src='images/me.jpg'><t2>"+name+"</t2></div><p id='userm' style='padding: 8px'>" + message + "</p><p id='time'>" + time() +"</p></div></user>";
   userMessage.className = "main";
   user.appendChild(userMessage);
-  var audi = new Audio('script/msg.mp3').play();
+  sent(true);
   let a = document.getElementById('status').innerText = "Typing...";
 scroll();
 setTimeout(ai, 1500);
@@ -73,7 +78,7 @@ function ai() {
  userMessage.innerHTML = "<h9><div class='bot'><div class='botimg'><img src='images/ai.jpg'><t2>Alex (Ai)</t2></div><p id='botm' style='padding: 8px'>" + generate() + "</p><p id='time'>" + time() + "</p></div></h9>";
  userMessage.className = "main";
  user.appendChild(userMessage);
-   var audi = new Audio('script/msg.mp3').play();
+ sent(true);
  scroll();
  input.value='';
 }
@@ -89,8 +94,7 @@ function scroll() {
 
 function day(week) {
   let name = localStorage.getItem('username');
-  const weekday =
-[" Sunday"," Monday"," Tuesday"," Wednesday"," Thursday"," Friday"," Saturday"];
+  const weekday = [" Sunday"," Monday"," Tuesday"," Wednesday"," Thursday"," Friday"," Saturday"];
 const d = new Date();
 let day = '' +weekday[d.getDay()];
 
@@ -103,10 +107,10 @@ var reply1 = rest[Math.floor(Math.random() *
   
 var text = [name+" are you happy today is", 
             name+" i hope you are happy today is",
-            name+" welcome the special day again"];
+            name+" welcome to the special day again"];
 var reply2 = text[Math.floor(Math.random() *
   text.length)];
-  if (day == " Thursday" || " Friday") {
+  if (day == "Thursday" | "Friday") {
    return  '<br>' + reply1
   } else {
     return '<br>' + reply2 + day.toLocaleLowerCase();

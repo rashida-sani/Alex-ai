@@ -14,7 +14,7 @@
         <img src="images/me.png" id="disp" onclick="cl()" title="Profile Picture">
       <p style="color: aqua;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">Enter your profile picture above.</p>
 
-      <form action="home.html" onsubmit="signUp()">
+      <form action="home.html?" onsubmit="signUp()">
         <input type="text" id="name" placeholder="Username" required="required" minlength="4" maxlength="8"><br><br>
         <input type="email" id="email" placeholder="Enter Email" required="required"><br><br>
         <input type="date" id="date" required="required"><br><br>  
@@ -25,14 +25,6 @@
     </footer>
     </div>
     <script>
-   if (localStorage.getItem('username')) {
-    window.location = "home.html";
-    window.close();
-} else {
-    window.location = "signup.html";
-    window.close();
-}
-
   b = new Date().getFullYear();
     	a = "Copyright © 2023-"+b+" By Abubakar ibrahim";
     	document.getElementById('copy').innerText = a
@@ -40,11 +32,11 @@
             name = document.getElementById('name').value;
             email = document.getElementById('email').value;
             date = document.getElementById('date').value;  
-
+            
             localStorage.setItem('username',name);
             localStorage.setItem('email',email)    
-            localStorage.setItem('birthdate',date)
-            window.close()    
+            localStorage.setItem('birthdate',date);
+            window.close()
         }     
   function cl() {
     document.getElementById('pic').click();
