@@ -59,12 +59,12 @@ var datenow = new Date();
   }
 function sendMessage() {
   let name = localStorage.getItem('username');
-  /* let Ppic = JSON.parse(localStorage.getItem("Ppic"))
-  */
+ let Ppic = JSON.parse(localStorage.getItem("Ppic"))
+  
   let message = input.value;
   let element = document.querySelector('main');
   let userMessage = document.createElement("div");
-  userMessage.innerHTML = "<user><div class='user'><div class='userimg'><img src='images/me.jpg'><t2>"+name+"</t2></div><p id='userm' style='padding: 8px'>" + message + "</p><p id='time'>" + time() +"</p></div></user>";
+  userMessage.innerHTML = "<user><div class='user'><div class='userimg'><img src='+Ppic+'><t2>"+name+"</t2></div><p id='userm' style='padding: 8px'>" + message + "</p><p id='time'>" + time() +"</p></div></user>";
   userMessage.className = "main";
   user.appendChild(userMessage);
   sent(true);
